@@ -10,7 +10,7 @@ Welcome to team *change*:
 ## objective
 The aim of this project is to create a game domain which is centered around human-ai team collaboration.
 In other words, creating a problem solving collaborative game environment where:
-- there is a shared global goal between the human and agent
+- there is a shared global goal between the human and agent.
 - the domain should enforce collaboration between the human and ai agent, thus ensuring collaboration over optional cooperation
 - regarding the problem solving effort, the human player is the leader and the ai agent is the companion assistant
   - i.e. whilst the human is hypothesizing and leading the problem solving effort, how should the companion agent assist and help? 
