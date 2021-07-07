@@ -9,6 +9,8 @@ public class GenerateMazeMain : MonoBehaviour
     public Transform TargetLighting;
     public Transform HumanPlayer;
     public Transform AIAgent;
+    public Transform Enemy;
+    public Transform Treasure;
 
     //public GameObject player;
     
@@ -32,6 +34,14 @@ public class GenerateMazeMain : MonoBehaviour
         AIAgent.localPosition = new Vector3(35f,
                                            2f,
                                            -25f);
+
+        Enemy.localPosition = new Vector3(-28f,
+                                           0.9f,
+                                           1.5f);
+
+        Treasure.localPosition = new Vector3(35f,
+                                           0.8f,
+                                           30f);
 
 
         TextAsset t1 = (TextAsset)Resources.Load("world_0_eg", typeof(TextAsset));
