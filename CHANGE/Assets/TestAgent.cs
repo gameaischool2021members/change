@@ -19,19 +19,19 @@ public class TestAgent : MonoBehaviour
         EAction action = agent.GetAction();
         if (action == EAction.MoveDown)
         {
-            transform.Translate(0, 0, -speed) ;
+            transform.Translate(0, 0, -speed * Time.deltaTime);
         }
         else if (action == EAction.MoveUp)
         {
-            transform.Translate(0, 0, speed);
+            transform.Translate(0, 0, speed * Time.deltaTime);
         }
         else if (action == EAction.MoveLeft)
         {
-            transform.Translate(-speed, 0, 0);
+            transform.Translate(-speed * Time.deltaTime, 0, 0);
         }
         else if (action == EAction.MoveRight)
         {
-            transform.Translate(speed, 0, 0);
+            transform.Translate(speed * Time.deltaTime, 0, 0);
         }
     }
 }
