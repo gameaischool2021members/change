@@ -1,0 +1,7 @@
+See the example scene for character setup and animations.
+
+See the crab-monster prefab for character itself. Please note that the animator controller should be adjusted or rebuilt consistent with your own game design - the existing setup is for example purposes only. 
+
+This is a fairly standard character asset and should be used in the usual ways.
+
+Need help? Contact lb3d.co@gmail.com (Leo)
