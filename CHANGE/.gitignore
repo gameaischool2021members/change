@@ -39,3 +39,7 @@ sysinfo.txt
 Icon?
 ehthumbs.db
 Thumbs.db
+.vsconfig
+Logs/
+pyvenv/
+results/
