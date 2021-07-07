@@ -7,6 +7,8 @@ Welcome to team *change*:
 - G: game
 - E: environment
 
+![change_world](change_world.png)
+
 ## objective
 The aim of this project is to create a game domain which is centered around human-ai team collaboration.
 In other words, creating a problem solving collaborative game environment where:
