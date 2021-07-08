@@ -7,6 +7,8 @@ Welcome to team *change*:
 - G: game
 - E: environment
 
+![change_world](change_world.png)
+
 ## objective
 The aim of this project is to create a game domain which is centered around human-ai team collaboration.
 In other words, creating a problem solving collaborative game environment where:
@@ -37,3 +39,6 @@ Unity ML links:
 - Geometry Friends Coop Track
   - This game domain is from the "Conference on Games" (see https://ieee-cog.org/2020/competitions_conference and https://ieeexplore.ieee.org/document/7317949)
   - gameplay: https://www.youtube.com/watch?v=DBWUFRMw754
+
+  ## Unity references
+  - Creating Your Level from a text file: https://learntocreategames.com/creating-your-level-from-a-text-file/
