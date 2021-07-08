@@ -6,4 +6,8 @@ public enum EAction
     MoveLeft,
     MoveRight,
     None,
+    W,
+    A,
+    S,
+    D,
 }
