@@ -11,8 +11,10 @@ public class GenerateMazeMainEscortAgentScene : MonoBehaviour
     public Transform TargetLightingForTeam1;
     public Transform TargetForTeam2;
     public Transform TargetLightingForTeam2;
-    public Transform HumanPlayer;
-    public Transform AIAgent;
+    public Transform HumanPlayerTeam1;
+    public Transform AIAgentTeam1;
+    public Transform HumanPlayerTeam2;
+    public Transform AIAgentTeam2;
  
     // Start is called before the first frame update
     void Start ()
@@ -22,8 +24,10 @@ public class GenerateMazeMainEscortAgentScene : MonoBehaviour
         TargetLightingForTeam1.localPosition = new Vector3(-18.3f, 7.9f, 27.5f);
         TargetForTeam2.localPosition = new Vector3(-18.3f, 0.9f, -27.5f);
         TargetLightingForTeam2.localPosition = new Vector3(-18.3f, 7.9f, -27.5f);
-        HumanPlayer.localPosition = new Vector3(11f, 1.14f, -13f);
-        AIAgent.localPosition = new Vector3(4f, 3.04f, -20f);
+        HumanPlayerTeam1.localPosition = new Vector3(11f, 1.14f, -13f);
+        AIAgentTeam1.localPosition = new Vector3(4f, 3.04f, -20f);
+        HumanPlayerTeam2.localPosition = new Vector3(11f, 1.14f, 13f);
+        AIAgentTeam2.localPosition = new Vector3(4f, 3.04f, 20f);
 
         string WorldFile = "world_escort_agent_scene";
         //string WorldFile = "world_0_eg";
