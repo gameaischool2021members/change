@@ -90,6 +90,8 @@ public class IntentPredictingAgent : Agent
 
     public Transform Target;
     public Transform PlayerPosition_old;
+    public Transform PlayerPosition_new;
+    HumanProxyIntentClassifier proxyCC;
     public override void OnEpisodeBegin()
     {
         /*
@@ -97,6 +99,7 @@ public class IntentPredictingAgent : Agent
         */
         HumanProxy proxy = new HumanProxy();
         HumanProxyIntentClassifier proxyC = new HumanProxyIntentClassifier();
+        proxyCC = proxyC;
         proxyC.learningMove = (ActionSpace)proxy.getAction();
         Target = proxyC.targetSelection();
 
@@ -106,27 +109,22 @@ public class IntentPredictingAgent : Agent
         PlayerController playerController = a.GetComponent<PlayerController>();
         
         playerController.Move(proxyC.learningMove);
+
+        PlayerPosition_new = a.transform;
         Debug.Log("Intended Target Tag = " + Target.tag);
         Debug.Log("Player Moved --> " + proxyC.learningMove);
-
-       // If the Agent fell, zero its momentum
-        if (this.transform.localPosition.y < 0)
-        {
-            this.rBody.angularVelocity = Vector3.zero;
-            this.rBody.velocity = Vector3.zero;
-            this.transform.localPosition = new Vector3( 0, 0.5f, 0);
-        }
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        // Target and Agent positions
-        sensor.AddObservation(Target.localPosition);
-        sensor.AddObservation(this.transform.localPosition);
+        // Human Position
+        sensor.AddObservation(PlayerPosition_old.localPosition);//3
+        sensor.AddObservation(PlayerPosition_new.localPosition);//3
+        sensor.AddObservation(this.transform.localPosition);//3
 
         // Agent velocity
-        sensor.AddObservation(rBody.velocity.x);
-        sensor.AddObservation(rBody.velocity.z);
+        sensor.AddObservation(proxyCC.target_Left.localPosition);//3
+        sensor.AddObservation(proxyCC.target_Right.localPosition);//3
     }
     public float forceMultiplier = 10;
     public override void OnActionReceived(ActionBuffers actionBuffers)
