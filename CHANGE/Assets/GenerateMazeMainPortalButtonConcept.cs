@@ -18,8 +18,8 @@ public class GenerateMazeMainPortalButtonConcept : MonoBehaviour
         // TODO: move initial asset object to level meta data config file
         TargetForTeam.localPosition = new Vector3(-30f, 0.9f, -30f);
         TargetLightingForTeam.localPosition = new Vector3(-30f, 7.9f, -30f);
-        HumanPlayer.localPosition = new Vector3(11f, 1.14f, -13f);
-        AIAgent.localPosition = new Vector3(4f, 3.04f, -20f);
+        HumanPlayer.localPosition = new Vector3(-5f, 1.14f, 12f);
+        AIAgent.localPosition = new Vector3(-20f, 3.04f, 30f);
 
         string WorldFile = "world_portal_button_scene";
 
