@@ -10,17 +10,20 @@ public class GenerateMazeMainEscortAgentScene : MonoBehaviour
     public Transform Target;
     public Transform TargetLighting;
     public Transform HumanPlayer;
+    public Transform AIAgent;
  
     // Start is called before the first frame update
     void Start ()
     {
         // TODO: move initial asset object to level meta data config file
+
         Target.localPosition = new Vector3(-18.3f, 0.9f, 27.5f);
         TargetLighting.localPosition = new Vector3(-18.3f, 7.9f, 27.5f);
         HumanPlayer.localPosition = new Vector3(-5f, 1.14f, -8f);
         AIAgent.localPosition = new Vector3(35f, 2f, -25f);
 
-        string WorldFile = "world_0_eg";
+        string WorldFile = "world_escort_agent_scene";
+        //string WorldFile = "world_0_eg";
         //string WorldFile = "world_2";
         TextAsset t1 = (TextAsset)Resources.Load(WorldFile, typeof(TextAsset));
         string s = t1.text;
