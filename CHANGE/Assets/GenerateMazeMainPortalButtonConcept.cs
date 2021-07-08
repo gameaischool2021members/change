@@ -6,6 +6,8 @@ using UnityEngine;
 public class GenerateMazeMainPortalButtonConcept : MonoBehaviour
 {
     public GameObject Wall;
+    public GameObject Door1;
+    public GameObject Door2;
     public GameObject Goal;
     public Transform TargetForTeam;
     public Transform TargetLightingForTeam;
@@ -39,6 +41,10 @@ public class GenerateMazeMainPortalButtonConcept : MonoBehaviour
                 else if (line[colIdx] == '5') // goal?
                 {
                     GameObject t = Instantiate(Goal, new Vector3(50 - colIdx * 10, 1.5f, 50 - lineIdx * 10), Quaternion.identity);
+                }
+                else if (line[colIdx] == '2') // door
+                {
+                    GameObject t = Instantiate(Door1, new Vector3(50 - colIdx * 10, 1.5f, 50 - lineIdx * 10), Quaternion.identity);
                 }
             }
         }
