@@ -502,6 +502,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &435003438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000014188511100, guid: 5dcae5adf53292945adef517afe8041e, type: 3}
+  m_PrefabInstance: {fileID: 1448574199}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &473233409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,6 +1157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Wall: {fileID: 316680436}
+  Goal: {fileID: 435003438}
   Target: {fileID: 779766229}
   TargetLighting: {fileID: 348769192}
   HumanPlayer: {fileID: 1498245861}
