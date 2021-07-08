@@ -23,6 +23,22 @@ public class HumanAgent : AbstractAgent
         {
             return EAction.MoveDown;
         }
+        else if (Input.GetKey(KeyCode.W))
+        {
+            return EAction.W;
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            return EAction.A;
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            return EAction.S;
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            return EAction.D;
+        }
         return EAction.None;
     }
 }
