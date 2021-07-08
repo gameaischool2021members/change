@@ -45,4 +45,6 @@ Thumbs.db
 Logs/
 pyvenv/
 results/
+
 Assets/ML-Agents/Timers/
+Assets/ML-Agents/Timers.meta
