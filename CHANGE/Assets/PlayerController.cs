@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private int gridPosX = 0;
     private int gridPosZ = 0;
 
-    private float timeSinceLastAction;
+    private float timeSinceLastAction = 999;
     public float timeBetweenActions = 0.3f;
 
     // Start is called before the first frame update
