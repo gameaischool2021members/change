@@ -21,10 +21,8 @@ public class GenerateMazeMainPortalButtonConcept : MonoBehaviour
         HumanPlayer.localPosition = new Vector3(11f, 1.14f, -13f);
         AIAgent.localPosition = new Vector3(4f, 3.04f, -20f);
 
+        string WorldFile = "world_portal_button_scene";
 
-        string WorldFile = "world_escort_agent_scene";
-        //string WorldFile = "world_0_eg";
-        //string WorldFile = "world_2";
         TextAsset t1 = (TextAsset)Resources.Load(WorldFile, typeof(TextAsset));
         string s = t1.text;
         // Assumes all lines have the same width
