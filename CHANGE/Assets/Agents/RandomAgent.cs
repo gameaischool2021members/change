@@ -9,6 +9,7 @@ public class RandomAgent : AbstractAgent
     EAction currentAction = EAction.None;
     public override EAction GetAction()
     {
+        Debug.Log("RandomAgent::GetAction");
         // We should probably get the world state as input here somewhere
         timeSinceLastDirectionChange += Time.deltaTime;
 

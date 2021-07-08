@@ -6,25 +6,17 @@ using UnityEngine;
 public class GenerateMazeMain : MonoBehaviour
 {
     public GameObject Wall;
-    public GameObject Goal;
-    public Transform Target;
-    public Transform TargetLighting;
-    public Transform HumanPlayer;
-    public Transform AIAgent;
-    public Transform Enemy;
+    public GameObject Player;
+    public GameObject AiSupporter;
+    public GameObject Target;
     
     // Start is called before the first frame update
     void Start ()
     {
         // TODO: move initial asset object to level meta data config file
-        Target.localPosition = new Vector3(-18.3f, 0.9f, 27.5f);
-        TargetLighting.localPosition = new Vector3(-18.3f, 7.9f, 27.5f);
-        HumanPlayer.localPosition = new Vector3(-5f, 1.14f, -8f);
-        AIAgent.localPosition = new Vector3(35f, 2f, -25f);
-        Enemy.localPosition = new Vector3(-28f, 0.9f, 1.5f);
 
-        string WorldFile = "world_0_eg";
-        //string WorldFile = "world_2";
+        //string WorldFile = "world_0_eg";
+        string WorldFile = "world_2";
         TextAsset t1 = (TextAsset)Resources.Load(WorldFile, typeof(TextAsset));
         string s = t1.text;
         // Assumes all lines have the same width
@@ -38,9 +30,19 @@ public class GenerateMazeMain : MonoBehaviour
                 {
                     GameObject t = Instantiate(Wall, new Vector3(50 - colIdx * 10, 1.5f, 50 - lineIdx * 10), Quaternion.identity);
                 }
-                else if (line[colIdx] == '5') // goal?
+                else if (line[colIdx] == '5') // target?
                 {
-                    GameObject t = Instantiate(Goal, new Vector3(50 - colIdx * 10, 1.5f, 50 - lineIdx * 10), Quaternion.identity);
+                    GameObject t = Instantiate(Target, new Vector3(50 - colIdx * 10, 1.5f, 50 - lineIdx * 10), Quaternion.identity);
+                }
+                else if (line[colIdx] == '8') // AI agent
+                {
+                    Debug.Log("Instantiation AiSupporter");
+                    GameObject t = Instantiate(AiSupporter, new Vector3(50 - colIdx * 10, 3.5f, 50 - lineIdx * 10), Quaternion.identity);
+                }
+                else if (line[colIdx] == '9') // player
+                {
+                    Debug.Log("Instantiation Player");
+                    GameObject t = Instantiate(Player, new Vector3(50 - colIdx * 10, 3.5f, 50 - lineIdx * 10), Quaternion.identity);
                 }
             }
         }
