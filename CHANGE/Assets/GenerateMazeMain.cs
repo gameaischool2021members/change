@@ -49,6 +49,8 @@ public class GenerateMazeMain : MonoBehaviour
                 {
                     Debug.Log("Instantiation Player");
                     GameObject t = Instantiate(Player, new Vector3(posX, 3.5f, posZ), Quaternion.identity);
+                    PlayerController playerController = t.GetComponent<PlayerController>();
+                    playerController.SetGridPos(colIdx, lineIdx);
                 }
                 map.SetAt(value, lineIdx, colIdx);
             }
