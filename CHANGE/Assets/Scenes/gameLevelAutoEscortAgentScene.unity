@@ -980,6 +980,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 749accce0034b01b0ba7f85cfb54e90f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Wall: {fileID: 316680436}
+  Goal: {fileID: 779766225}
+  Target: {fileID: 779766229}
+  TargetLighting: {fileID: 348769192}
+  HumanPlayer: {fileID: 1498245861}
+  AIAgent: {fileID: 348769192}
+  Enemy: {fileID: 0}
 --- !u!1001 &5187748020897543783
 PrefabInstance:
   m_ObjectHideFlags: 0
