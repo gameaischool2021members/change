@@ -4,85 +4,45 @@ using UnityEngine;
 
 public class GenerateMazeMain : MonoBehaviour
 {
-    public GameObject wall;
+    public GameObject Wall;
     public Transform Target;
     public Transform TargetLighting;
     public Transform HumanPlayer;
     public Transform AIAgent;
     public Transform Enemy;
     public Transform Treasure;
-
-    //public GameObject player;
     
     // Start is called before the first frame update
     void Start ()
     {
         // TODO: move initial asset object to level meta data config file
-        
-        Target.localPosition = new Vector3(-18.3f,
-                                           0.9f,
-                                           27.5f);
-
-        TargetLighting.localPosition = new Vector3(-18.3f,
-                                           7.9f,
-                                           27.5f);
-
-        HumanPlayer.localPosition = new Vector3(-5f,
-                                           1.14f,
-                                           -8f);
-                                        
-        AIAgent.localPosition = new Vector3(35f,
-                                           2f,
-                                           -25f);
-
-        Enemy.localPosition = new Vector3(-28f,
-                                           0.9f,
-                                           1.5f);
-
-        Treasure.localPosition = new Vector3(35f,
-                                           0.8f,
-                                           30f);
-
+        Target.localPosition = new Vector3(-18.3f, 0.9f, 27.5f);
+        TargetLighting.localPosition = new Vector3(-18.3f, 7.9f, 27.5f);
+        HumanPlayer.localPosition = new Vector3(-5f, 1.14f, -8f);
+        AIAgent.localPosition = new Vector3(35f, 2f, -25f);
+        Enemy.localPosition = new Vector3(-28f, 0.9f, 1.5f);
+        Treasure.localPosition = new Vector3(35f, 0.8f, 30f);
 
         TextAsset t1 = (TextAsset)Resources.Load("world_0_eg", typeof(TextAsset));
-    
         string s = t1.text;
-    
-        int i, j;
-    
-        s = s.Replace("\n","");
-    
-        for (i = 0; i < s.Length; i++)
-    
+        s = s.Replace("\n", "");
+        for (int i = 0; i < s.Length; i++)
         {
-    
-            if (s [i] == '1')
-    
+            if (s[i] == '1')
             {
-    
                 int column, row;
-    
-                column = i%10;
-    
+                column = i % 10;
                 row = i / 10;
-    
                 GameObject t;
-    
-                t = (GameObject)(Instantiate (wall, new Vector3 (50 - column * 10, 1.5f, 50 - row * 10), Quaternion.identity));
-    
+                t = (GameObject)(Instantiate(Wall, new Vector3(50 - column * 10, 1.5f, 50 - row * 10), Quaternion.identity));
             }
-    
         }
-
         //GameObject t;
-    
         //t = (GameObject)(Instantiate (player, new Vector3 (50 - column * 10, 1.5f, 50 - row * 10), Quaternion.identity));
-    
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 }
