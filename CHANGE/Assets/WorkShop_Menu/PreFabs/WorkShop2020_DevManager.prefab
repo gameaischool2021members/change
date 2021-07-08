@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6977020574370139657
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6977020574370139658}
+  - component: {fileID: 6977020574370139659}
+  m_Layer: 5
+  m_Name: WorkShop2020_DevManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6977020574370139658
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6977020574370139657}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 516.5, y: 290.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6977020574370139659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6977020574370139657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c459bcbc6b47741ee92e988b803ca77c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectButtonsPreFab: {fileID: 6566949465936181496, guid: 643ee64719db04f8f8f216b02c66f25c,
+    type: 3}
+  projectButtonsParent: {fileID: 0}
+  projectButtonsPosStart: {x: 0, y: 0, z: 0}
+  projectButtonsPosOffsetY: -50
+  sceneButtonPreFab: {fileID: 6566949465936181496, guid: 643ee64719db04f8f8f216b02c66f25c,
+    type: 3}
+  sceneButtonsParent: {fileID: 0}
+  sceneButtonsPosStart: {x: 0, y: 0, z: 0}
+  sceneButtonsPossOffsetY: -50
+  projectsMenu: {fileID: 0}
+  projectsScenesMenu: {fileID: 0}
+  mainMenu: {fileID: 0}
+  paths:
+  - Assets/WorkShop_Menu/ExampleProjects
+  devWorkShopMenuPath: Assets/WorkShop_Menu/Demo/demo.unity
+  DestroyOnLoad: 0
+  returnToMenuButton: tab
+  projectPaths: []
+  scenePaths: []
+  info: Some info.....
+  infoTextMeshPro: {fileID: 0}
+  functionStartAndEnding: 0
+  listsBeingUpdated: 0
+  fileBeingProcessed: 0
