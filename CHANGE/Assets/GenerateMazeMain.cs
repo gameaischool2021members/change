@@ -13,7 +13,7 @@ public class GenerateMazeMain : MonoBehaviour
     // Start is called before the first frame update
     void Start ()
     {
-        // TODO: move initial asset object to level meta data config file
+        GridMap map = GridMap.GetInstance();
 
         //string WorldFile = "world_0_eg";
         string WorldFile = "world_2";
@@ -21,35 +21,37 @@ public class GenerateMazeMain : MonoBehaviour
         string s = t1.text;
         // Assumes all lines have the same width
         string[] lines = s.SplitLines();
+        int nrRows = lines.Length;
+        int nrCols = lines[0].Length;
+        map.SetDimensions(nrRows, nrCols);
         for (int lineIdx = 0; lineIdx<lines.Length; lineIdx++)
         {
             string line = lines[lineIdx];
             for (int colIdx = 0; colIdx < line.Length; colIdx++)
             {
-                if (line[colIdx] == '1') // wall
+                float posX = map.GetWorldPosX(colIdx);
+                float posZ = map.GetWorldPosZ(lineIdx);
+                char value = line[colIdx];
+                if (value == '1') // wall
                 {
-                    GameObject t = Instantiate(Wall, new Vector3(50 - colIdx * 10, 1.5f, 50 - lineIdx * 10), Quaternion.identity);
+                    GameObject t = Instantiate(Wall, new Vector3(posX, 1.5f, posZ), Quaternion.identity);
                 }
-                else if (line[colIdx] == '5') // target?
+                else if (value == '5') // target?
                 {
-                    GameObject t = Instantiate(Target, new Vector3(50 - colIdx * 10, 1.5f, 50 - lineIdx * 10), Quaternion.identity);
+                    GameObject t = Instantiate(Target, new Vector3(posX, 1.5f, posZ), Quaternion.identity);
                 }
-                else if (line[colIdx] == '8') // AI agent
+                else if (value == '8') // AI agent
                 {
                     Debug.Log("Instantiation AiSupporter");
-                    GameObject t = Instantiate(AiSupporter, new Vector3(50 - colIdx * 10, 3.5f, 50 - lineIdx * 10), Quaternion.identity);
+                    GameObject t = Instantiate(AiSupporter, new Vector3(posX, 3.5f, posZ), Quaternion.identity);
                 }
-                else if (line[colIdx] == '9') // player
+                else if (value == '9') // player
                 {
                     Debug.Log("Instantiation Player");
-                    GameObject t = Instantiate(Player, new Vector3(50 - colIdx * 10, 3.5f, 50 - lineIdx * 10), Quaternion.identity);
+                    GameObject t = Instantiate(Player, new Vector3(posX, 3.5f, posZ), Quaternion.identity);
                 }
+                map.SetAt(value, lineIdx, colIdx);
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 }
