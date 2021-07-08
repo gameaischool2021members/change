@@ -377,7 +377,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202072084}
   m_LocalRotation: {x: 0.46174863, y: 0, z: 0, w: 0.8870109}
-  m_LocalPosition: {x: -1.1, y: 62.5, z: -49}
+  m_LocalPosition: {x: -1.1, y: 62.5, z: -54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -985,8 +985,7 @@ MonoBehaviour:
   Target: {fileID: 779766229}
   TargetLighting: {fileID: 348769192}
   HumanPlayer: {fileID: 1498245861}
-  AIAgent: {fileID: 348769192}
-  Enemy: {fileID: 0}
+  AIAgent: {fileID: 155616157}
 --- !u!1001 &5187748020897543783
 PrefabInstance:
   m_ObjectHideFlags: 0
