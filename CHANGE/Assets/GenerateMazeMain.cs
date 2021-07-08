@@ -51,6 +51,8 @@ public class GenerateMazeMain : MonoBehaviour
                 {
                     Debug.Log("Instantiation AiSupporter");
                     GameObject t = Instantiate(AiSupporter, new Vector3(posX, 3.5f, posZ), Quaternion.identity);
+                    AiController aiController = t.GetComponent<AiController>();
+                    aiController.SetGridPos(colIdx, lineIdx);
                 }
                 else if (value == '9') // player
                 {
