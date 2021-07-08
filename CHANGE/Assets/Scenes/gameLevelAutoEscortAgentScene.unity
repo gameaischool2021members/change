@@ -206,7 +206,7 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
-  Target: {fileID: 0}
+  Target: {fileID: 779766229}
   forceMultiplier: 10
 --- !u!54 &155616153
 Rigidbody:
@@ -738,7 +738,7 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
-  Target: {fileID: 0}
+  Target: {fileID: 1113043223}
   forceMultiplier: 10
 --- !u!54 &651035984
 Rigidbody:
