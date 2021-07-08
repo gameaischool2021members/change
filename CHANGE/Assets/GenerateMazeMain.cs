@@ -23,7 +23,9 @@ public class GenerateMazeMain : MonoBehaviour
         Enemy.localPosition = new Vector3(-28f, 0.9f, 1.5f);
         Treasure.localPosition = new Vector3(35f, 0.8f, 30f);
 
-        TextAsset t1 = (TextAsset)Resources.Load("world_0_eg", typeof(TextAsset));
+        string WorldFile = "world_0_eg";
+        //string WorldFile = "world_2";
+        TextAsset t1 = (TextAsset)Resources.Load(WorldFile, typeof(TextAsset));
         string s = t1.text;
         s = s.Replace("\n", "");
         for (int i = 0; i < s.Length; i++)
