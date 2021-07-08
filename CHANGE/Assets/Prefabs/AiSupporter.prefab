@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2215175148653312947}
   - component: {fileID: 5369779015068386541}
   - component: {fileID: 3072501781986788243}
+  - component: {fileID: 4078638054269270115}
   m_Layer: 0
   m_Name: AiSupporter
   m_TagString: Untagged
@@ -96,3 +97,16 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &4078638054269270115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4791421310344364840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea49f82d41de0634792acbaf502a35db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6

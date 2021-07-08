@@ -36,10 +36,12 @@ public class GenerateMazeMain : MonoBehaviour
                 }
                 else if (line[colIdx] == '8') // AI agent
                 {
+                    Debug.Log("Instantiation AiSupporter");
                     GameObject t = Instantiate(AiSupporter, new Vector3(50 - colIdx * 10, 3.5f, 50 - lineIdx * 10), Quaternion.identity);
                 }
                 else if (line[colIdx] == '9') // player
                 {
+                    Debug.Log("Instantiation Player");
                     GameObject t = Instantiate(Player, new Vector3(50 - colIdx * 10, 3.5f, 50 - lineIdx * 10), Quaternion.identity);
                 }
             }
