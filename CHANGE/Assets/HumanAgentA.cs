@@ -14,8 +14,7 @@ public class HumanAgentA : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Move () {
         EAction action = agent.GetAction();
         if (action == EAction.MoveDown)
         {
@@ -33,5 +32,9 @@ public class HumanAgentA : MonoBehaviour
         {
             transform.Translate(speedHumanAgent * Time.deltaTime, 0, 0);
         }
+    }
+
+    void Update() {
+        Move();
     }
 }

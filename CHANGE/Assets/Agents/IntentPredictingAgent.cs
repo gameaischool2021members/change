@@ -11,13 +11,13 @@ using Unity.MLAgents.Actuators;
 /*
     Defines Human Proxy Action Space
 */
-enum ActionSpace {
-        StandStill = 0,
-        MoveRight,
-        MoveLeft,
-        MoveForward,
-        MoveBackward
-    }
+public enum ActionSpace {
+    StandStill = 0,
+    MoveRight,
+    MoveLeft,
+    MoveForward,
+    MoveBackward
+}
 
 /*
     Hack for Learning purposes.
@@ -29,7 +29,6 @@ public class HumanProxy {
         return move;
     }
 }
-
 
 /*
     Defines Target Observer. Purpose is based on HumanProxy Movement
@@ -90,6 +89,7 @@ public class IntentPredictingAgent : Agent
     }
 
     public Transform Target;
+    public Transform PlayerPosition_old;
     public override void OnEpisodeBegin()
     {
         /*
@@ -100,7 +100,14 @@ public class IntentPredictingAgent : Agent
         proxyC.learningMove = (ActionSpace)proxy.getAction();
         Target = proxyC.targetSelection();
 
-        Debug.Log(Target.tag);
+        Transform localAgent = GameObject.FindGameObjectsWithTag("Player")[0].transform;
+        GameObject a = GameObject.FindGameObjectsWithTag("Player")[0];
+        PlayerPosition_old = a.transform;
+        PlayerController playerController = a.GetComponent<PlayerController>();
+        
+        playerController.Move(proxyC.learningMove);
+        Debug.Log("Intended Target Tag = " + Target.tag);
+        Debug.Log("Player Moved --> " + proxyC.learningMove);
 
        // If the Agent fell, zero its momentum
         if (this.transform.localPosition.y < 0)
@@ -109,11 +116,6 @@ public class IntentPredictingAgent : Agent
             this.rBody.velocity = Vector3.zero;
             this.transform.localPosition = new Vector3( 0, 0.5f, 0);
         }
-
-        // Move the target to a new spot
-        Target.localPosition = new Vector3(Random.value * 8 - 4,
-                                           0.5f,
-                                           Random.value * 8 - 4);
     }
 
     public override void CollectObservations(VectorSensor sensor)

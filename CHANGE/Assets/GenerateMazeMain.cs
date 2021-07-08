@@ -41,7 +41,6 @@ public class GenerateMazeMain : MonoBehaviour
                 {
                     GameObject t = Instantiate(Target, new Vector3(posX, 1.5f, posZ), Quaternion.identity);
                     t.tag = targetID.ToString();
-                    Debug.Log(t.tag);
                     targetID = targetID+1;
                     if (targetID > 2) {
                         targetID = 1;
@@ -58,6 +57,7 @@ public class GenerateMazeMain : MonoBehaviour
                 {
                     Debug.Log("Instantiation Player");
                     GameObject t = Instantiate(Player, new Vector3(posX, 3.5f, posZ), Quaternion.identity);
+                    t.tag = "Player";
                     PlayerController playerController = t.GetComponent<PlayerController>();
                     playerController.SetGridPos(colIdx, lineIdx);
                 }
