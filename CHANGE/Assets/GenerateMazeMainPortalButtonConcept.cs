@@ -9,6 +9,7 @@ public class GenerateMazeMainPortalButtonConcept : MonoBehaviour
     public GameObject Door1;
     public GameObject Door2;
     public GameObject Goal;
+    public GameObject WorldButton;
     public Transform TargetForTeam;
     public Transform TargetLightingForTeam;
     public Transform HumanPlayer;
@@ -45,6 +46,10 @@ public class GenerateMazeMainPortalButtonConcept : MonoBehaviour
                 else if (line[colIdx] == '2') // door
                 {
                     GameObject t = Instantiate(Door1, new Vector3(50 - colIdx * 10, 1.5f, 50 - lineIdx * 10), Quaternion.identity);
+                }
+                else if (line[colIdx] == '3') // worldbutton
+                {
+                    GameObject t = Instantiate(WorldButton, new Vector3(50 - colIdx * 10, 0.5f, 50 - lineIdx * 10), Quaternion.identity);
                 }
             }
         }
