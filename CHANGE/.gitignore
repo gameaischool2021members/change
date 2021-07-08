@@ -39,7 +39,10 @@ sysinfo.txt
 Icon?
 ehthumbs.db
 Thumbs.db
+
+# Other stuff
 .vsconfig
 Logs/
 pyvenv/
 results/
+Assets/ML-Agents/Timers/
