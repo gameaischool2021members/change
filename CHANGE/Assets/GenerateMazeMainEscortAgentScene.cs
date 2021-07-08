@@ -7,8 +7,10 @@ public class GenerateMazeMainEscortAgentScene : MonoBehaviour
 {
     public GameObject Wall;
     public GameObject Goal;
-    public Transform Target;
-    public Transform TargetLighting;
+    public Transform TargetForTeam1;
+    public Transform TargetLightingForTeam1;
+    public Transform TargetForTeam2;
+    public Transform TargetLightingForTeam2;
     public Transform HumanPlayer;
     public Transform AIAgent;
  
@@ -16,9 +18,10 @@ public class GenerateMazeMainEscortAgentScene : MonoBehaviour
     void Start ()
     {
         // TODO: move initial asset object to level meta data config file
-
-        Target.localPosition = new Vector3(-18.3f, 0.9f, 27.5f);
-        TargetLighting.localPosition = new Vector3(-18.3f, 7.9f, 27.5f);
+        TargetForTeam1.localPosition = new Vector3(-18.3f, 0.9f, 27.5f);
+        TargetLightingForTeam1.localPosition = new Vector3(-18.3f, 7.9f, 27.5f);
+        TargetForTeam2.localPosition = new Vector3(-18.3f, 0.9f, -27.5f);
+        TargetLightingForTeam2.localPosition = new Vector3(-18.3f, 7.9f, -27.5f);
         HumanPlayer.localPosition = new Vector3(-5f, 1.14f, -8f);
         AIAgent.localPosition = new Vector3(35f, 2f, -25f);
 
