@@ -22,8 +22,8 @@ public class GenerateMazeMainEscortAgentScene : MonoBehaviour
         TargetLightingForTeam1.localPosition = new Vector3(-18.3f, 7.9f, 27.5f);
         TargetForTeam2.localPosition = new Vector3(-18.3f, 0.9f, -27.5f);
         TargetLightingForTeam2.localPosition = new Vector3(-18.3f, 7.9f, -27.5f);
-        HumanPlayer.localPosition = new Vector3(-5f, 1.14f, -8f);
-        AIAgent.localPosition = new Vector3(35f, 2f, -25f);
+        HumanPlayer.localPosition = new Vector3(11f, 1.14f, -13f);
+        AIAgent.localPosition = new Vector3(4f, 3.04f, -20f);
 
         string WorldFile = "world_escort_agent_scene";
         //string WorldFile = "world_0_eg";
