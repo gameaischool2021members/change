@@ -7,7 +7,7 @@ Welcome to team *change*:
 - G: game
 - E: environment
 
-Team CHANGE Members: 
+Team Members: 
 - LJ Arendse (@LJArendse)
 - Christian Cecconi (@ChristianCecconi)
 - Anna Dollbo (@dollbo)
