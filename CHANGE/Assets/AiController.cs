@@ -57,56 +57,56 @@ public void Move(ActionSpace action) {
         transform.Translate(diffX * 0.01f, 0, 0);
         transform.Translate(0, 0, diffZ * 0.01f);
     }
-    
+
     // Update is called once per frame
     void Update()
     {
-        GridMap map = GridMap.GetInstance();
-        timeSinceLastAction += Time.deltaTime;
-        if (timeSinceLastAction >= timeBetweenActions)
-        {
-            EAction action = agent.GetAction();
-            //Debug.Log("Taking action: " + action);
-            if (action != EAction.None)
-            {
-                timeSinceLastAction = 0; // reset timer
-            }
-            if (action == EAction.MoveDown)
-            {
-                if (map.IsWalkable(gridPosX, gridPosZ + 1))
-                {
-                    gridPosZ += 1;
-                }
-            }
-            else if (action == EAction.MoveUp)
-            {
-                if (map.IsWalkable(gridPosX, gridPosZ - 1))
-                {
-                    gridPosZ -= 1;
-                }
-            }
-            else if (action == EAction.MoveLeft)
-            {
-                if (map.IsWalkable(gridPosX + 1, gridPosZ))
-                {
-                    gridPosX += 1;
-                }
-            }
-            else if (action == EAction.MoveRight)
-            {
-                if (map.IsWalkable(gridPosX - 1, gridPosZ))
-                {
-                    gridPosX -= 1;
-                }
-            }
-        }
+        // GridMap map = GridMap.GetInstance();
+        // timeSinceLastAction += Time.deltaTime;
+        // if (timeSinceLastAction >= timeBetweenActions)
+        // {
+        //     EAction action = agent.GetAction();
+        //     //Debug.Log("Taking action: " + action);
+        //     if (action != EAction.None)
+        //     {
+        //         timeSinceLastAction = 0; // reset timer
+        //     }
+        //     if (action == EAction.MoveDown)
+        //     {
+        //         if (map.IsWalkable(gridPosX, gridPosZ + 1))
+        //         {
+        //             gridPosZ += 1;
+        //         }
+        //     }
+        //     else if (action == EAction.MoveUp)
+        //     {
+        //         if (map.IsWalkable(gridPosX, gridPosZ - 1))
+        //         {
+        //             gridPosZ -= 1;
+        //         }
+        //     }
+        //     else if (action == EAction.MoveLeft)
+        //     {
+        //         if (map.IsWalkable(gridPosX + 1, gridPosZ))
+        //         {
+        //             gridPosX += 1;
+        //         }
+        //     }
+        //     else if (action == EAction.MoveRight)
+        //     {
+        //         if (map.IsWalkable(gridPosX - 1, gridPosZ))
+        //         {
+        //             gridPosX -= 1;
+        //         }
+        //     }
+        // }
 
-        float targetPosX = map.GetWorldPosX(gridPosX);
-        float targetPosZ = map.GetWorldPosZ(gridPosZ);
-        float diffX = targetPosX - transform.position.x;
-        float diffZ = targetPosZ - transform.position.z;
-        transform.Translate(diffX * 0.01f, 0, 0);
-        transform.Translate(0, 0, diffZ * 0.01f);
+        // float targetPosX = map.GetWorldPosX(gridPosX);
+        // float targetPosZ = map.GetWorldPosZ(gridPosZ);
+        // float diffX = targetPosX - transform.position.x;
+        // float diffZ = targetPosZ - transform.position.z;
+        // transform.Translate(diffX * 0.01f, 0, 0);
+        // transform.Translate(0, 0, diffZ * 0.01f);
     }
 
     public void SetGridPos(int x, int z)

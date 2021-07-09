@@ -78,9 +78,23 @@ public class IntentPredictingAgent : Agent
 {
     public override void Heuristic(in ActionBuffers actionsOut)
     {
-        var continuousActionsOut = actionsOut.ContinuousActions;
-        continuousActionsOut[0] = Input.GetAxis("Horizontal");
-        continuousActionsOut[1] = Input.GetAxis("Vertical");
+        // var discreteActionsOut = actionsOut.DiscreteActions;
+        // if (Input.GetKey(KeyCode.W))
+        // {
+        //     discreteActionsOut[0] = 1;
+        // }
+        // if (Input.GetKey(KeyCode.D))
+        // {
+        //     discreteActionsOut[1] = 2;
+        // }
+        // if (Input.GetKey(KeyCode.S))
+        // {
+        //     discreteActionsOut[2] = 3;
+        // }
+        // if (Input.GetKey(KeyCode.A))
+        // {
+        //     discreteActionsOut[3] = 4;
+        // }
     }
 
     Rigidbody rBody;
@@ -125,6 +139,8 @@ public class IntentPredictingAgent : Agent
         // Agent velocity
         sensor.AddObservation(proxyCC.target_Left.localPosition);//3
         sensor.AddObservation(proxyCC.target_Right.localPosition);//3
+
+        // action space of total 15 floats
     }
     public float forceMultiplier = 10;
     public override void OnActionReceived(ActionBuffers actionBuffers)
@@ -141,23 +157,16 @@ public class IntentPredictingAgent : Agent
             case 4: aiController.Move(ActionSpace.MoveLeft); break;
         }
 
-
-
-
         // Rewards
         float distanceToTarget = Vector3.Distance(this.transform.localPosition, Target.localPosition);
 
         // Reached target
-        if (distanceToTarget < 1.42f)
+        if (distanceToTarget < 1.5f)
         {
             SetReward(1.0f);
             EndEpisode();
-        }
-
-        // Fell off platform
-        else if (this.transform.localPosition.y < 0)
-        {
-            EndEpisode();
+        } else {
+            SetReward(-1.0f);
         }
     }
 }
