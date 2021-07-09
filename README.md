@@ -36,10 +36,8 @@ Oftentimes NPCs play a supportive or companion role to the player.
 Creating believable companion AI agents is an important research effort since the entire
 collaborative experience can be adversely affected if the companion agent cannot meet player expectation.
 
-Current there are 4 collaborative domains centered around Human-AI team collaboration:
-
-"Win, get cake?", "**Intent** and **Act**", "Escort human", and "TeamAI Dungeon"
-![change_world](/images/inagame_combined.png )
+Current there are 4 collaborative domains centered around Human-AI team collaboration, these are "Win, get cake?", "**Anticipate an Intent** and **Act**", "Escort human avatar", and "TeamAI Dungeon"
+![change_world](/images/inagame_combined.png)
 
 ## Required Software
 * Unity 2020.2.1f1 or newer
