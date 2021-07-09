@@ -8,7 +8,7 @@ public class RandomAgent : AbstractAgent
     {
         EAction currentAction = EAction.None;
         int rndInt = (int)(Random.value * 4);
-        Debug.Log(rndInt);
+        //Debug.Log(rndInt);
         if (rndInt == 0)
         {
             currentAction = EAction.MoveRight;

@@ -9,6 +9,7 @@ public class GenerateMazeMain : MonoBehaviour
     public GameObject Player;
     public GameObject AiSupporter;
     public GameObject Target;
+    private int targetID = 2;
     
     // Start is called before the first frame update
     void Start ()
@@ -39,20 +40,27 @@ public class GenerateMazeMain : MonoBehaviour
                 else if (value == '5') // target?
                 {
                     GameObject t = Instantiate(Target, new Vector3(posX, 1.5f, posZ), Quaternion.identity);
+                    t.tag = targetID.ToString();
+                    targetID = targetID - 1;
+                    //if (targetID > 2) {
+                    //    targetID = 1;
+                    //}
                 }
                 else if (value == '8') // AI agent
                 {
                     Debug.Log("Instantiation AiSupporter");
                     GameObject t = Instantiate(AiSupporter, new Vector3(posX, 3.5f, posZ), Quaternion.identity);
+                    t.tag = "AI";
                     AiController aiController = t.GetComponent<AiController>();
-                    aiController.SetGridPos(colIdx, lineIdx);
+                    aiController.SetGridPos(colIdx, lineIdx, true);
                 }
                 else if (value == '9') // player
                 {
                     Debug.Log("Instantiation Player");
                     GameObject t = Instantiate(Player, new Vector3(posX, 3.5f, posZ), Quaternion.identity);
+                    t.tag = "Player";
                     PlayerController playerController = t.GetComponent<PlayerController>();
-                    playerController.SetGridPos(colIdx, lineIdx);
+                    playerController.SetGridPos(colIdx, lineIdx, true);
                 }
                 map.SetAt(value, lineIdx, colIdx);
             }
