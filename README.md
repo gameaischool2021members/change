@@ -49,9 +49,11 @@ Current there are 4 collaborative domains centered around Human-AI team collabor
 
 ### Getting Started with the environment
 Setting up **Python**, **Tensorflow**, **Unity** and **Unity ML-agents** does not diviate from general installation requirements. 
-_We recommend to run environment on Windows machine to avoid issues with OMP._
+Also, we have listed requirements for Python environment, that can be found under following path -> **<repo_path>/CHANGE/requirements.txt**
 
 Our agent for the "**Anticipate an Intent** and **Act**" environment can be found inside -> **IntentPredictingAgent.cs** file. This is a file to head to in order to alter agent action space, observation and reward.
+
+_We recommend to run environment on Windows machine to avoid issues with OMP that may occur on MacOS operated machines_
 
 ## Results
 We were able to successfuly train an agent that based on his observations predicted Intent displayed by a human avatar. 
