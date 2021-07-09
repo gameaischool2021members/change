@@ -18,10 +18,9 @@ The main goal is to teach a companion agent to _anticipate_ player desires, with
 * World state observer confirms victory conditions based on actions performed by human player using standard game logic
 
 Current there are 4 collaborative domains centered around Human-AI team collaboration:
-- **Anticipate Intent** and **Act**
-- Escort human avatar
-- Win, get cake?
-- TeamAI Dungeon
+
+"Win, get cake?", "**Intent** and **Act**", "Escort human", and "TeamAI Dungeon"
+![change_world](/images/inagame_combined.png )
 
 **Team Members**: 
 - LJ Arendse (@LJArendse) 🇿🇦
