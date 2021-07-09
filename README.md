@@ -30,11 +30,21 @@ Current there are 4 collaborative domains centered around Human-AI team collabor
 - Björn P Mattsson (@Plankton555) :sweden:
 - Vladyslav Ieliashevskyi (@vieliashevskyi) :ukraine:
 
-![change_world](change_world.png)
+![change_world](/images/change_world.png)
 
 ## Technology
 * Unity 2020.2.1f1 or newer
 * Unity ml-agents 0.27.0 or newer
+
+## Results
+We were able to successfuly train an agent that based on his observations predicted Intent displayed by a human avatar.
+
+Agent results during the training process ->
+![Training Process](/images/learning-process.png)
+
+And our Tensorboard -> 
+
+![Tensorboard](/images/tensorboard.png)
 
 ### Recomended Unity ML links
 * [Unity ML agents](https://github.com/Unity-Technologies/ml-agents)
