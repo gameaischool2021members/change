@@ -1,5 +1,12 @@
 # CHANGE
 
+## Team Members
+- LJ Arendse (@LJArendse) 🇿🇦
+- Christian Cecconi (@ChristianCecconi) :it:
+- Anna Dollbo (@dollbo) 🇸🇪
+- Björn P Mattsson (@Plankton555) :sweden:
+- Vladyslav Ieliashevskyi (@vieliashevskyi) :ukraine:
+
 ## What is CHANGE?
 **C**ollaborative **H**uman to **A**I **N**PC **G**ame **E**nvironment - is a testbed for development of Human-AI collaboration inside sandboxed game environment.
 Each of presented environments enforces dependency on the AI-companion agent. In other words, the human needs the help of the AI agent to proceed. Furthermore, each problem solving collaborative game environment has:
@@ -17,19 +24,18 @@ The main goal is to teach a companion agent to _anticipate_ player desires, with
   * Levels are built using 'intention based challenges' in mind
 * World state observer confirms victory conditions based on actions performed by human player using standard game logic
 
+### Why Companion Agents?
+
+Cooperation between human agents and artificial intelligence is a topic of great scientific interest, especially due to its complexity, in particular for the need to advance the AI natural-language understanding (Dafoe et al., 2021).
+
+It has been pointed out that a team composed of an AI and a human agent is more efficient than a team composed of only humans, even if humans seem to have better opinions on human partners, considering them more pleasant and creative compared to AI (Ashktorab et al., 2020; McNeese et al., 2021).
+
+Based on what has emerged, we believe that cooperation between humans and AI is the future, to be able to establish cooperation that allows us to achieve otherwise impossible goals, combining the qualities of the human being and the growing power of artificial intelligence.
+
 Current there are 4 collaborative domains centered around Human-AI team collaboration:
 
 "Win, get cake?", "**Intent** and **Act**", "Escort human", and "TeamAI Dungeon"
 ![change_world](/images/inagame_combined.png )
-
-**Team Members**: 
-- LJ Arendse (@LJArendse) 🇿🇦
-- Christian Cecconi (@ChristianCecconi) :it:
-- Anna Dollbo (@dollbo) 🇸🇪
-- Björn P Mattsson (@Plankton555) :sweden:
-- Vladyslav Ieliashevskyi (@vieliashevskyi) :ukraine:
-
-![change_world](/images/change_world.png)
 
 ## Required Software
 * Unity 2020.2.1f1 or newer
@@ -75,8 +81,8 @@ And our Tensorboard ->
   * [Gameplay Video](https://www.youtube.com/watch?v=DBWUFRMw754)
 
 ## Inspirational Research on Human-AI Communication/Collaboration 
-- https://www.aaai.org/AAAI21Papers/AAAI-8636.BansalG.pdf
-- https://scholarspace.manoa.hawaii.edu/bitstream/10125/70652/0035.pdf
-- https://dl.acm.org/doi/abs/10.1145/3415167
-- https://arxiv.org/abs/2105.11000
-- https://www.nature.com/articles/d41586-021-01170-0
+* Ashktorab, Z., Liao, Q. V., Dugan, C., Johnson, J., Pan, Q., Zhang, W., Kumaravel, S., Campbell, M. (2020) Human-AI Collaboration in a Cooperative Game Setting: * Measuring Social Perception and Outcomes. In Proceedings of the ACM on Human-Computer Interaction, 4(CSCW2), pp. 1-20. https://doi.org/10.1145/3415167
+* Bansal, G., Nushi, B., Kamar, E., Horvitz, E., Weld, D. S. (2021) Is the Most Accurate AI the Best Teammate? Optimizing AI for Teamwork. In ArXiv, abs/2004.13102v3.
+* Dafoe, A., Bachrach, Y., Hadfield, G., Horvitz, E., Larson, L., Graepel, T. (2021) Cooperative AI: machines must learn to find common ground. In Nature, 593(7857), pp. 33-36. doi: 10.1038/d41586-021-01170-0.
+* McNeese, N. J., Schelble, B. G., Canonico, L. B., Demir, M. (2021) Who/What is My Teammate? Team Composition Considerations in Human-AI Teaming. In ArXiv, abs/2105.11000v1.
+* Schelble, B. G., Flathmann, C., McNeese, N., Canonico, L. B. (2021). Understanding Human-AI Cooperation Through Game-Theory and Reinforcement Learning Models. In Proceedings of the 54th Hawaii International Conference on System Sciences | 2021. DOI:10.24251/HICSS.2021.041
