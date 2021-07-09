@@ -1,12 +1,13 @@
 # CHANGE
 **C**ollaborative **H**uman to **A**I **N**PC **G**ame **E**nvironment - is a testbed for development of Human-AI collaboration inside sandboxed game environment. 
 
-The main goal is to teach agend to _anticipate_ player desires, without direct communication and other cues, simply based on player actions.
-* Player can progress to the next level only in case if AI-agent correctly predicts player intent and using limited number of moves correctly helps human player to reach desired goal
-  * AI-agent takes assistant (supportive) role
-* Environment must **enforce** collaboration, thus eliminating options to win using _optional collaboration_
-  * This is achieved using level layout and movement constraints placed on human player
-  * Levels are build using 'intention based challenges' in mind
+The main goal is to teach a companion agent to _anticipate_ player desires, without direct communication and other cues, simply based on player actions.
+* Players can progress to the next level only if the AI-agent can correctly predict player intent whilst minimising the number of actions taken.
+  * The AI-agent plays an assistant (supportive/companion) role
+  * The human player is the problem solving lead - leading the problem solving effort.
+* Our gym environments aim to **enforce** collaboration, and eliminate options to win using _optional collaboration_
+  * This is achieved by the level design and by placing movement constraints on the human player
+  * Levels are built using 'intention based challenges' in mind
 * World state observer confirms victory conditions based on actions performed by human player using standard game logic
 
 **Team Members**: 
