@@ -9,9 +9,21 @@ public class AiController : MonoBehaviour
 
     private int gridPosX = 0;
     private int gridPosZ = 0;
+    private int originalGridPosX = 0;
+    private int originalGridPosZ = 0;
 
     private float timeSinceLastAction = 999;
     public float timeBetweenActions = 0.5f;
+
+    public void ResetPosition()
+    {
+        gridPosX = originalGridPosX;
+        gridPosZ = originalGridPosZ;
+        GridMap map = GridMap.GetInstance();
+        float diffX = map.GetWorldPosX(gridPosX) - transform.position.x;
+        float diffZ = map.GetWorldPosZ(gridPosZ) - transform.position.z;
+        transform.Translate(diffX, 0, diffZ);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -22,54 +34,61 @@ public class AiController : MonoBehaviour
 
 public void Move(ActionSpace action) {
         GridMap map = GridMap.GetInstance();
-        timeSinceLastAction += Time.deltaTime;
+        //timeSinceLastAction += Time.deltaTime;
 
-        if (action == ActionSpace.MoveBackward) {
+        if (action == ActionSpace.MoveBackward)
+        {
             if (map.IsWalkable(gridPosX, gridPosZ + 1))
-                {
-                    gridPosZ += 1;
-                    Debug.Log("BACK");
-                } 
-        }  else if (action == ActionSpace.MoveForward) {
-                if (map.IsWalkable(gridPosX, gridPosZ - 1))
-                {
-                    gridPosZ -= 1;
-                    Debug.Log("FRONT");
-                }
-        } else if (action == ActionSpace.MoveLeft) {
-                if (map.IsWalkable(gridPosX + 1, gridPosZ))
-                {
-                    gridPosX += 1;
-                    Debug.Log("LEFT");
-                }
-        } else if (action == ActionSpace.MoveRight) {
-                if (map.IsWalkable(gridPosX - 1, gridPosZ))
-                {
-                    gridPosX -= 1;
-                    Debug.Log("RIGHT");
-                }
+            {
+                gridPosZ += 1;
+                Debug.Log("BACK");
+            }
+        }
+        else if (action == ActionSpace.MoveForward)
+        {
+            if (map.IsWalkable(gridPosX, gridPosZ - 1))
+            {
+                gridPosZ -= 1;
+                Debug.Log("FRONT");
+            }
+        }
+        else if (action == ActionSpace.MoveLeft)
+        {
+            if (map.IsWalkable(gridPosX + 1, gridPosZ))
+            {
+                gridPosX += 1;
+                Debug.Log("LEFT");
+            }
+        }
+        else if (action == ActionSpace.MoveRight)
+        {
+            if (map.IsWalkable(gridPosX - 1, gridPosZ))
+            {
+                gridPosX -= 1;
+                Debug.Log("RIGHT");
+            }
         }
 
-        float targetPosX = map.GetWorldPosX(gridPosX);
-        float targetPosZ = map.GetWorldPosZ(gridPosZ);
-        float diffX = targetPosX - transform.position.x;
-        float diffZ = targetPosZ - transform.position.z;
-        transform.Translate(diffX * 0.01f, 0, 0);
-        transform.Translate(0, 0, diffZ * 0.01f);
+        //float targetPosX = map.GetWorldPosX(gridPosX);
+        //float targetPosZ = map.GetWorldPosZ(gridPosZ);
+        //float diffX = targetPosX - transform.position.x;
+        //float diffZ = targetPosZ - transform.position.z;
+        //transform.Translate(diffX * 0.01f, 0, 0);
+        //transform.Translate(0, 0, diffZ * 0.01f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        // GridMap map = GridMap.GetInstance();
-        // timeSinceLastAction += Time.deltaTime;
-        // if (timeSinceLastAction >= timeBetweenActions)
-        // {
+        GridMap map = GridMap.GetInstance();
+        timeSinceLastAction += Time.deltaTime;
+         if (timeSinceLastAction >= timeBetweenActions)
+         {
         //     EAction action = agent.GetAction();
         //     //Debug.Log("Taking action: " + action);
         //     if (action != EAction.None)
         //     {
-        //         timeSinceLastAction = 0; // reset timer
+                 timeSinceLastAction = 0; // reset timer
         //     }
         //     if (action == EAction.MoveDown)
         //     {
@@ -99,19 +118,32 @@ public void Move(ActionSpace action) {
         //             gridPosX -= 1;
         //         }
         //     }
-        // }
+         }
 
-        // float targetPosX = map.GetWorldPosX(gridPosX);
-        // float targetPosZ = map.GetWorldPosZ(gridPosZ);
-        // float diffX = targetPosX - transform.position.x;
-        // float diffZ = targetPosZ - transform.position.z;
-        // transform.Translate(diffX * 0.01f, 0, 0);
-        // transform.Translate(0, 0, diffZ * 0.01f);
+        float targetPosX = map.GetWorldPosX(gridPosX);
+        float targetPosZ = map.GetWorldPosZ(gridPosZ);
+        float diffX = targetPosX - transform.position.x;
+        float diffZ = targetPosZ - transform.position.z;
+        transform.Translate(diffX * 1.0f, 0, diffZ * 1.0f);
     }
 
-    public void SetGridPos(int x, int z)
+    public void SetGridPos(int x, int z, bool saveAsOriginal = false)
     {
         gridPosX = x;
         gridPosZ = z;
+        if (saveAsOriginal)
+        {
+            originalGridPosX = x;
+            originalGridPosZ = z;
+        }
+    }
+
+    public int GetGridPosX()
+    {
+        return gridPosX;
+    }
+    public int GetGridPosZ()
+    {
+        return gridPosZ;
     }
 }

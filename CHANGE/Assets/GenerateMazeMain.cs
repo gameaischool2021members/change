@@ -52,7 +52,7 @@ public class GenerateMazeMain : MonoBehaviour
                     GameObject t = Instantiate(AiSupporter, new Vector3(posX, 3.5f, posZ), Quaternion.identity);
                     t.tag = "AI";
                     AiController aiController = t.GetComponent<AiController>();
-                    aiController.SetGridPos(colIdx, lineIdx);
+                    aiController.SetGridPos(colIdx, lineIdx, true);
                 }
                 else if (value == '9') // player
                 {
@@ -60,7 +60,7 @@ public class GenerateMazeMain : MonoBehaviour
                     GameObject t = Instantiate(Player, new Vector3(posX, 3.5f, posZ), Quaternion.identity);
                     t.tag = "Player";
                     PlayerController playerController = t.GetComponent<PlayerController>();
-                    playerController.SetGridPos(colIdx, lineIdx);
+                    playerController.SetGridPos(colIdx, lineIdx, true);
                 }
                 map.SetAt(value, lineIdx, colIdx);
             }

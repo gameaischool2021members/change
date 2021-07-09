@@ -25,7 +25,8 @@ public enum ActionSpace {
 */
 public class HumanProxy {
     public int getAction() {
-        int move = UnityEngine.Random.Range(0,5);
+        //int move = UnityEngine.Random.Range(0,5);
+        int move = UnityEngine.Random.Range(1, 3);
         return move;
     }
 }
@@ -103,11 +104,17 @@ public class IntentPredictingAgent : Agent
     }
 
     public Transform Target;
+    public Transform PlayerPosition_original = null;
     public Transform PlayerPosition_old;
     public Transform PlayerPosition_new;
     HumanProxyIntentClassifier proxyCC;
+
+    float episodeStartTime = 0;
+    int nrActionsInEpisode = 0;
+
     public override void OnEpisodeBegin()
     {
+        Debug.Log("OnEpisodeBegin");
         /*
             Emulate Human Move
         */
@@ -117,20 +124,26 @@ public class IntentPredictingAgent : Agent
         proxyC.learningMove = (ActionSpace)proxy.getAction();
         Target = proxyC.targetSelection();
 
-        Transform localAgent = GameObject.FindGameObjectsWithTag("Player")[0].transform;
-        GameObject a = GameObject.FindGameObjectsWithTag("Player")[0];
-        PlayerPosition_old = a.transform;
-        PlayerController playerController = a.GetComponent<PlayerController>();
-        
+        GameObject playerObject = GameObject.FindGameObjectsWithTag("Player")[0];
+        PlayerController playerController = playerObject.GetComponent<PlayerController>();
+        GameObject aiAgent = GameObject.FindGameObjectsWithTag("AI")[0];
+        AiController aiController = aiAgent.GetComponent<AiController>();
+        playerController.ResetPosition();
+        aiController.ResetPosition();
+        PlayerPosition_old = playerObject.transform;
+
         playerController.Move(proxyC.learningMove);
 
-        PlayerPosition_new = a.transform;
+        PlayerPosition_new = playerObject.transform;
+        episodeStartTime = Time.realtimeSinceStartup;
+        nrActionsInEpisode = 0;
         Debug.Log("Intended Target Tag = " + Target.tag);
         Debug.Log("Player Moved --> " + proxyC.learningMove);
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
+        Debug.Log("CollectObservations");
         // Human Position
         sensor.AddObservation(PlayerPosition_old.localPosition);//3
         sensor.AddObservation(PlayerPosition_new.localPosition);//3
@@ -145,28 +158,39 @@ public class IntentPredictingAgent : Agent
     public float forceMultiplier = 10;
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
+        Debug.Log("OnActionReceived");
         // Actions, discrete size = 5
         int movement = actionBuffers.DiscreteActions[0];
         GameObject aiAgent = GameObject.FindGameObjectsWithTag("AI")[0];
         AiController aiController = aiAgent.GetComponent<AiController>();
-        switch (movement) {
+        switch (movement)
+        {
             case 0: aiController.Move(ActionSpace.StandStill); break;
-            case 1: aiController.Move(ActionSpace.MoveForward);break;
-            case 2: aiController.Move(ActionSpace.MoveRight);break;
+            case 1: aiController.Move(ActionSpace.MoveForward); break;
+            case 2: aiController.Move(ActionSpace.MoveRight); break;
             case 3: aiController.Move(ActionSpace.MoveBackward); break;
             case 4: aiController.Move(ActionSpace.MoveLeft); break;
         }
+        nrActionsInEpisode++;
 
         // Rewards
-        float distanceToTarget = Vector3.Distance(this.transform.localPosition, Target.localPosition);
+        GridMap map = GridMap.GetInstance();
+        float worldPosX = map.GetWorldPosX(aiController.GetGridPosX());
+        float worldPosZ = map.GetWorldPosZ(aiController.GetGridPosZ());
+        float distanceToTarget = Vector3.Distance( new Vector3(worldPosX, 0, worldPosZ), Target.localPosition);
+        //float distanceToTarget = Vector3.Distance(this.transform.localPosition, Target.localPosition);
 
         // Reached target
         if (distanceToTarget < 1.5f)
         {
-            SetReward(1.0f);
+            SetReward(10.0f);
             EndEpisode();
-        } else {
-            SetReward(-1.0f);
+        }
+        else if (nrActionsInEpisode > 50)
+        {
+            float rewardValue = (10.0f / (10.0f + distanceToTarget)) - 5; // max 5, min ~ -5
+            SetReward(rewardValue);
+            EndEpisode();
         }
     }
 }
