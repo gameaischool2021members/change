@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -54,5 +55,14 @@ public class GridMap
     public float GetWorldPosZ(int rowIdx)
     {
         return 50 - rowIdx * 10;
+    }
+
+    public bool IsWalkable(int x, int z)
+    {
+        if (GetAt(z, x) != '1')
+        {
+            return true;
+        }
+        return false;
     }
 }

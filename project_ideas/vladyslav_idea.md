@@ -1,4 +1,4 @@
-### V.Ieliashevskyi workspace
+### V.Ieliashevskyi workspace --permission test
 # CHAINGE
 
 **C**ollaborative **H**uman to **AI** **N**PC **G**ame **E**nvironment - is a testbed for development of Human-AI collaboration inside sandboxed game environment. The main goal is to teach agend to _anticipate_ player desires, without direct communication and other cues, simply based on player actions.

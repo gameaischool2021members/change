@@ -44,11 +44,15 @@ public class GenerateMazeMain : MonoBehaviour
                 {
                     Debug.Log("Instantiation AiSupporter");
                     GameObject t = Instantiate(AiSupporter, new Vector3(posX, 3.5f, posZ), Quaternion.identity);
+                    AiController aiController = t.GetComponent<AiController>();
+                    aiController.SetGridPos(colIdx, lineIdx);
                 }
                 else if (value == '9') // player
                 {
                     Debug.Log("Instantiation Player");
                     GameObject t = Instantiate(Player, new Vector3(posX, 3.5f, posZ), Quaternion.identity);
+                    PlayerController playerController = t.GetComponent<PlayerController>();
+                    playerController.SetGridPos(colIdx, lineIdx);
                 }
                 map.SetAt(value, lineIdx, colIdx);
             }
