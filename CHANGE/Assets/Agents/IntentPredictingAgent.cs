@@ -110,6 +110,7 @@ public class IntentPredictingAgent : Agent
     HumanProxyIntentClassifier proxyCC;
 
     float episodeStartTime = 0;
+    float lastMoveTime = 0;
     int nrActionsInEpisode = 0;
 
     public override void OnEpisodeBegin()
@@ -160,6 +161,15 @@ public class IntentPredictingAgent : Agent
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
         Debug.Log("OnActionReceived");
+        if (episodeStartTime + 1 > Time.realtimeSinceStartup)
+        {
+            return; // wait one second before moving the AI
+        }
+        if (lastMoveTime + 0.3 > Time.realtimeSinceStartup)
+        {
+            return; // don't move the AI to quickly
+        }
+        lastMoveTime = Time.realtimeSinceStartup;
         // Actions, discrete size = 5
         int movement = actionBuffers.DiscreteActions[0];
         GameObject aiAgent = GameObject.FindGameObjectsWithTag("AI")[0];
@@ -188,7 +198,8 @@ public class IntentPredictingAgent : Agent
         //    //EndEpisode();
         //}
         //else if (nrActionsInEpisode > 50 && episodeStartTime + 5 < Time.realtimeSinceStartup)
-        if (nrActionsInEpisode > 50 && episodeStartTime + 5 < Time.realtimeSinceStartup)
+        if (nrActionsInEpisode > 5 && episodeStartTime + 5 < Time.realtimeSinceStartup)
+        //if (nrActionsInEpisode > 50 && episodeStartTime + 5 < Time.realtimeSinceStartup)
         {
             float rewardValue = 10.0f / (0.1f + 0.1f * distanceToTarget); // max 10, min ~ -0
             SetReward(rewardValue);
