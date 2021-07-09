@@ -25,7 +25,6 @@ The main goal is to teach a companion agent to _anticipate_ player desires, with
 * World state observer confirms victory conditions based on actions performed by human player using standard game logic
 
 ### Why Companion Agents?
-
 Cooperation between human agents and artificial intelligence is a topic of great scientific interest, especially due to its complexity, in particular for the need to advance the AI natural-language understanding (Dafoe et al., 2021).
 
 It has been pointed out that a team composed of an AI and a human agent is more efficient than a team composed of only humans, even if humans seem to have better opinions on human partners, considering them more pleasant and creative compared to AI (Ashktorab et al., 2020; McNeese et al., 2021).
@@ -69,6 +68,9 @@ Agent results during the training process ->
 And our Tensorboard -> 
 
 ![Tensorboard](/images/tensorboard.png)
+
+And our final result ->
+[**Intention Predicting Agent (Youtube)**](https://youtu.be/Ow2F_gQqLTE)
 
 ### Recomended Unity ML links
 * [Unity ML agents](https://github.com/Unity-Technologies/ml-agents)
