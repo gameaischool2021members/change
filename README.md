@@ -32,6 +32,11 @@ It has been pointed out that a team composed of an AI and a human agent is more 
 
 Based on what has emerged, we believe that cooperation between humans and AI is the future, to be able to establish cooperation that allows us to achieve otherwise impossible goals, combining the qualities of the human being and the growing power of artificial intelligence.
 
+Furthermore from a video game persepective, Non-player characters (NPCs) in games play a unique part in enriching player experience.
+Oftentimes NPCs play a supportive or companion role to the player.
+Creating believable companion AI agents is an important research effort since the entire
+collaborative experience can be adversely affected if the companion agent cannot meet player expectation.
+
 Current there are 4 collaborative domains centered around Human-AI team collaboration:
 
 "Win, get cake?", "**Intent** and **Act**", "Escort human", and "TeamAI Dungeon"
