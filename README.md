@@ -8,7 +8,7 @@
 - Vladyslav Ieliashevskyi (@vieliashevskyi) :ukraine:
 
 ## What is CHANGE?
-**C**ollaborative **H**uman to **A**I **N**PC **G**ame **E**nvironment - is a testbed for development of Human-AI collaboration inside sandboxed game environment.
+**C**ollaborative **H**uman **A**I **N**PC **G**ame **E**nvironment - is a testbed for development of Human-AI collaboration inside sandboxed game environment.
 Each of the presented environments enforces dependency on the AI-companion agent. In other words, the human needs the help of the AI agent to proceed. Furthermore, each problem solving collaborative game environment has:
 * A shared global goal between the human and agent, and
 * Enforces collaboration between the human and AI agent, thus ensuring collaboration over optional cooperation
