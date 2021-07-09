@@ -50,6 +50,7 @@ public class GenerateMazeMain : MonoBehaviour
                 {
                     Debug.Log("Instantiation AiSupporter");
                     GameObject t = Instantiate(AiSupporter, new Vector3(posX, 3.5f, posZ), Quaternion.identity);
+                    t.tag = "AI";
                     AiController aiController = t.GetComponent<AiController>();
                     aiController.SetGridPos(colIdx, lineIdx);
                 }

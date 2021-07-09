@@ -20,6 +20,44 @@ public class AiController : MonoBehaviour
         agent = new RandomAgent();
     }
 
+public void Move(ActionSpace action) {
+        GridMap map = GridMap.GetInstance();
+        timeSinceLastAction += Time.deltaTime;
+
+        if (action == ActionSpace.MoveBackward) {
+            if (map.IsWalkable(gridPosX, gridPosZ + 1))
+                {
+                    gridPosZ += 1;
+                    Debug.Log("BACK");
+                } 
+        }  else if (action == ActionSpace.MoveForward) {
+                if (map.IsWalkable(gridPosX, gridPosZ - 1))
+                {
+                    gridPosZ -= 1;
+                    Debug.Log("FRONT");
+                }
+        } else if (action == ActionSpace.MoveLeft) {
+                if (map.IsWalkable(gridPosX + 1, gridPosZ))
+                {
+                    gridPosX += 1;
+                    Debug.Log("LEFT");
+                }
+        } else if (action == ActionSpace.MoveRight) {
+                if (map.IsWalkable(gridPosX - 1, gridPosZ))
+                {
+                    gridPosX -= 1;
+                    Debug.Log("RIGHT");
+                }
+        }
+
+        float targetPosX = map.GetWorldPosX(gridPosX);
+        float targetPosZ = map.GetWorldPosZ(gridPosZ);
+        float diffX = targetPosX - transform.position.x;
+        float diffZ = targetPosZ - transform.position.z;
+        transform.Translate(diffX * 0.01f, 0, 0);
+        transform.Translate(0, 0, diffZ * 0.01f);
+    }
+    
     // Update is called once per frame
     void Update()
     {

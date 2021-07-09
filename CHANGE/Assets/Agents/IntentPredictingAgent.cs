@@ -129,11 +129,20 @@ public class IntentPredictingAgent : Agent
     public float forceMultiplier = 10;
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
-        // Actions, size = 2
-        Vector3 controlSignal = Vector3.zero;
-        controlSignal.x = actionBuffers.ContinuousActions[0];
-        controlSignal.z = actionBuffers.ContinuousActions[1];
-        rBody.AddForce(controlSignal * forceMultiplier);
+        // Actions, discrete size = 5
+        int movement = actionBuffers.DiscreteActions[0];
+        GameObject aiAgent = GameObject.FindGameObjectsWithTag("AI")[0];
+        AiController aiController = aiAgent.GetComponent<AiController>();
+        switch (movement) {
+            case 0: aiController.Move(ActionSpace.StandStill); break;
+            case 1: aiController.Move(ActionSpace.MoveForward);break;
+            case 2: aiController.Move(ActionSpace.MoveRight);break;
+            case 3: aiController.Move(ActionSpace.MoveBackward); break;
+            case 4: aiController.Move(ActionSpace.MoveLeft); break;
+        }
+
+
+
 
         // Rewards
         float distanceToTarget = Vector3.Distance(this.transform.localPosition, Target.localPosition);
