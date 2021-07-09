@@ -9,8 +9,8 @@
 
 ## What is CHANGE?
 **C**ollaborative **H**uman to **A**I **N**PC **G**ame **E**nvironment - is a testbed for development of Human-AI collaboration inside sandboxed game environment.
-Each of presented environments enforces dependency on the AI-companion agent. In other words, the human needs the help of the AI agent to proceed. Furthermore, each problem solving collaborative game environment has:
-* A shared global goal between the human and agent
+Each of the presented environments enforces dependency on the AI-companion agent. In other words, the human needs the help of the AI agent to proceed. Furthermore, each problem solving collaborative game environment has:
+* A shared global goal between the human and agent, and
 * Enforces collaboration between the human and AI agent, thus ensuring collaboration over optional cooperation
  
 In terms of solving effort, the human player is the leader and the AI agent is the companion assistant that tries to anticipate human intent, without any additional cues: vocal or action-based (e.g: mouse click), only based on environment observations.
@@ -75,7 +75,7 @@ And our Tensorboard ->
 * [How to create a new environment in Unity ML](https://github.com/Unity-Technologies/ml-agents/blob/main/docs/Learning-Environment-Create-New.md)
  * [Environment examples](https://github.com/Unity-Technologies/ml-agents/blob/main/docs/Learning-Environment-Examples.md)
 
-## other collaborative game domains which inspired this project
+## Other collaborative game domains which inspired this project
 * [Minidungeons](http://antoniosliapis.com/projects/project_minidungeons.php)
   * [Gameplay Video](https://www.youtube.com/watch?v=8aRxeA2KA5A)
 * [Portal 2 co-op mode](https://www.youtube.com/watch?v=A88YiZdXugA)
