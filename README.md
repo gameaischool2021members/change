@@ -40,5 +40,12 @@ Unity ML links:
   - This game domain is from the "Conference on Games" (see https://ieee-cog.org/2020/competitions_conference and https://ieeexplore.ieee.org/document/7317949)
   - gameplay: https://www.youtube.com/watch?v=DBWUFRMw754
 
-  ## Unity references
-  - Creating Your Level from a text file: https://learntocreategames.com/creating-your-level-from-a-text-file/
+## Unity references
+- Creating Your Level from a text file: https://learntocreategames.com/creating-your-level-from-a-text-file/
+
+## Research on Human-AI Communication/Collaboration 
+- https://www.aaai.org/AAAI21Papers/AAAI-8636.BansalG.pdf
+- https://scholarspace.manoa.hawaii.edu/bitstream/10125/70652/0035.pdf
+- https://dl.acm.org/doi/abs/10.1145/3415167
+- https://arxiv.org/abs/2105.11000
+- https://www.nature.com/articles/d41586-021-01170-0
