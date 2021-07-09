@@ -122,6 +122,7 @@ public class IntentPredictingAgent : Agent
         HumanProxyIntentClassifier proxyC = new HumanProxyIntentClassifier();
         proxyCC = proxyC;
         proxyC.learningMove = (ActionSpace)proxy.getAction();
+        //proxyC.learningMove = ActionSpace.MoveRight;
         Target = proxyC.targetSelection();
 
         GameObject playerObject = GameObject.FindGameObjectsWithTag("Player")[0];
@@ -181,14 +182,14 @@ public class IntentPredictingAgent : Agent
         //float distanceToTarget = Vector3.Distance(this.transform.localPosition, Target.localPosition);
 
         // Reached target
-        if (distanceToTarget < 1.5f)
+        if (distanceToTarget < 5.0f)
         {
-            SetReward(10.0f);
-            EndEpisode();
+            SetReward(30.0f);
+            //EndEpisode();
         }
-        else if (nrActionsInEpisode > 50)
+        else if (nrActionsInEpisode > 50 && episodeStartTime + 5 < Time.realtimeSinceStartup)
         {
-            float rewardValue = (10.0f / (10.0f + distanceToTarget)) - 5; // max 5, min ~ -5
+            float rewardValue = 10.0f / (0.1f + 0.1f*distanceToTarget); // max 10, min ~ -0
             SetReward(rewardValue);
             EndEpisode();
         }

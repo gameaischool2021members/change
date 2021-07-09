@@ -9,7 +9,7 @@ public class GenerateMazeMain : MonoBehaviour
     public GameObject Player;
     public GameObject AiSupporter;
     public GameObject Target;
-    public int targetID = 1;
+    private int targetID = 2;
     
     // Start is called before the first frame update
     void Start ()
@@ -41,10 +41,10 @@ public class GenerateMazeMain : MonoBehaviour
                 {
                     GameObject t = Instantiate(Target, new Vector3(posX, 1.5f, posZ), Quaternion.identity);
                     t.tag = targetID.ToString();
-                    targetID = targetID+1;
-                    if (targetID > 2) {
-                        targetID = 1;
-                    }
+                    targetID = targetID - 1;
+                    //if (targetID > 2) {
+                    //    targetID = 1;
+                    //}
                 }
                 else if (value == '8') // AI agent
                 {

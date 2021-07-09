@@ -124,7 +124,8 @@ public void Move(ActionSpace action) {
         float targetPosZ = map.GetWorldPosZ(gridPosZ);
         float diffX = targetPosX - transform.position.x;
         float diffZ = targetPosZ - transform.position.z;
-        transform.Translate(diffX * 1.0f, 0, diffZ * 1.0f);
+        float scalingFactor = 0.2f;
+        transform.Translate(diffX * scalingFactor, 0, diffZ * scalingFactor);
     }
 
     public void SetGridPos(int x, int z, bool saveAsOriginal = false)
