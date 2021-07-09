@@ -125,6 +125,7 @@ public void Move(ActionSpace action) {
         float diffX = targetPosX - transform.position.x;
         float diffZ = targetPosZ - transform.position.z;
         float scalingFactor = 0.2f;
+        //float scalingFactor = 1.0f;
         transform.Translate(diffX * scalingFactor, 0, diffZ * scalingFactor);
     }
 

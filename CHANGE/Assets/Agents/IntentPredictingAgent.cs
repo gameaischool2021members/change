@@ -182,14 +182,15 @@ public class IntentPredictingAgent : Agent
         //float distanceToTarget = Vector3.Distance(this.transform.localPosition, Target.localPosition);
 
         // Reached target
-        if (distanceToTarget < 5.0f)
+        //if (distanceToTarget < 5.0f)
+        //{
+        //    SetReward(30.0f);
+        //    //EndEpisode();
+        //}
+        //else if (nrActionsInEpisode > 50 && episodeStartTime + 5 < Time.realtimeSinceStartup)
+        if (nrActionsInEpisode > 50 && episodeStartTime + 5 < Time.realtimeSinceStartup)
         {
-            SetReward(30.0f);
-            //EndEpisode();
-        }
-        else if (nrActionsInEpisode > 50 && episodeStartTime + 5 < Time.realtimeSinceStartup)
-        {
-            float rewardValue = 10.0f / (0.1f + 0.1f*distanceToTarget); // max 10, min ~ -0
+            float rewardValue = 10.0f / (0.1f + 0.1f * distanceToTarget); // max 10, min ~ -0
             SetReward(rewardValue);
             EndEpisode();
         }
