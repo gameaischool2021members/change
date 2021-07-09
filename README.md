@@ -1,21 +1,41 @@
-# change
-Welcome to team *change*:
-- C: collaborative
-- H: human
-- A: ai
-- N: npc
-- G: game
-- E: environment
+# CHANGE
+**C**ollaborative **H**uman to **A**I **N**PC **G**ame **E**nvironment - is a testbed for development of Human-AI collaboration inside sandboxed game environment. 
+
+The main goal is to teach a companion agent to _anticipate_ player desires, without direct communication and other cues, simply based on player actions.
+* Players can progress to the next level only if the AI-agent can correctly predict player intent whilst minimising the number of actions taken.
+  * The AI-agent plays an assistant (supportive/companion) role
+  * The human player is the problem solving lead - leading the problem solving effort.
+* Our gym environments aim to **enforce** collaboration, and eliminate options to win using _optional collaboration_
+  * This is achieved by the level design and by placing movement constraints on the human player
+  * Levels are built using 'intention based challenges' in mind
+* World state observer confirms victory conditions based on actions performed by human player using standard game logic
+
+**Team Members**: 
+- LJ Arendse (@LJArendse) 🇿🇦
+- Christian Cecconi (@ChristianCecconi) :it:
+- Anna Dollbo (@dollbo) 🇸🇪
+- Björn P Mattsson (@Plankton555) :sweden:
+- Vladyslav Ieliashevskyi (@vieliashevskyi) :ukraine:
 
 ![change_world](change_world.png)
 
-## objective
-The aim of this project is to create a game domain which is centered around human-ai team collaboration.
-In other words, creating a problem solving collaborative game environment where:
-- there is a shared global goal between the human and agent.
-- the domain should enforce collaboration between the human and ai agent, thus ensuring collaboration over optional cooperation
-- regarding the problem solving effort, the human player is the leader and the ai agent is the companion assistant
-  - i.e. whilst the human is hypothesizing and leading the problem solving effort, how should the companion agent assist and help? 
+## What is CHANGE?
+`CHANGE` is a gym environment for collaborative companion agents. 
+In the current build there are four collaborative domains centered around human-ai team collaboration.:
+- Intent and Act
+- Escort Human
+- Win, get cake?
+- TeamAI Dungeon
+
+## Objective
+The aim of project `change` is to provide several game domains/environments which are centered around human-ai team collaboration.
+Each of these environments enforce dependency on the companion agent. In other words, the human needs the help of the AI agent
+companion to solve the problem. Furthermore, each problem solving collaborative game environment has:
+- a shared global goal between the human and agent
+- enforces collaboration between the human and ai agent, thus ensuring collaboration over optional cooperation
+Regarding the problem solving effort, the human player is the leader and the ai agent is the companion assistant.
+In other words, whilst the human is hypothesizing and leading the problem solving effort, how should the companion agent assist and help? 
+
 
 ## technology
 We are thinking of using the Unity ML toolkit and the Unity ML python API, in some way to build out the game and enable agent creation.
