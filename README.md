@@ -1,18 +1,18 @@
-# change
-Welcome to team *change*:
-- C: collaborative
-- H: human
-- A: ai
-- N: npc
-- G: game
-- E: environment
+# CHANGE (CHAINGE)
+CHANGE stands for:
+- C: Collaborative
+- H: Human
+- A: AI
+- N: NPC
+- G: Game
+- E: Environment
 
-Team Members: 
-- LJ Arendse (@LJArendse)
-- Christian Cecconi (@ChristianCecconi)
-- Anna Dollbo (@dollbo)
-- Vladyslav Ieliashevskyi (@vieliashevskyi)
-- Björn P Mattsson (@Plankton555)
+**Team Members**: 
+- LJ Arendse (@LJArendse) 🇿🇦
+- Christian Cecconi (@ChristianCecconi) :it:
+- Anna Dollbo (@dollbo) 🇸🇪
+- Björn P Mattsson (@Plankton555) :sweden:
+- Vladyslav Ieliashevskyi (@vieliashevskyi) :ukraine:
 
 ![change_world](change_world.png)
 
