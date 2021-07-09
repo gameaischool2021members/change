@@ -78,23 +78,23 @@ public class IntentPredictingAgent : Agent
 {
     public override void Heuristic(in ActionBuffers actionsOut)
     {
-        // var discreteActionsOut = actionsOut.DiscreteActions;
-        // if (Input.GetKey(KeyCode.W))
-        // {
-        //     discreteActionsOut[0] = 1;
-        // }
-        // if (Input.GetKey(KeyCode.D))
-        // {
-        //     discreteActionsOut[1] = 2;
-        // }
-        // if (Input.GetKey(KeyCode.S))
-        // {
-        //     discreteActionsOut[2] = 3;
-        // }
-        // if (Input.GetKey(KeyCode.A))
-        // {
-        //     discreteActionsOut[3] = 4;
-        // }
+        var discreteActionsOut = actionsOut.DiscreteActions;
+        if (Input.GetKey(KeyCode.W))
+        {
+            discreteActionsOut[0] = 1;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            discreteActionsOut[0] = 2;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            discreteActionsOut[0] = 3;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            discreteActionsOut[0] = 4;
+        }
     }
 
     Rigidbody rBody;
