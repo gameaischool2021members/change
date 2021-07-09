@@ -1,4 +1,4 @@
-# CHANGE (CHAINGE)
+# CHANGE
 **C**ollaborative **H**uman to **A**I **N**PC **G**ame **E**nvironment - is a testbed for development of Human-AI collaboration inside sandboxed game environment. 
 
 The main goal is to teach agend to _anticipate_ player desires, without direct communication and other cues, simply based on player actions.
@@ -18,15 +18,15 @@ The main goal is to teach agend to _anticipate_ player desires, without direct c
 
 ![change_world](change_world.png)
 
-## What is change?
-`change` is a gym environment for collaborative companion agents. 
+## What is CHANGE?
+`CHANGE` is a gym environment for collaborative companion agents. 
 In the current build there are four collaborative domains centered around human-ai team collaboration.:
 - Intent and Act
 - Escort Human
 - Win, get cake?
 - TeamAI Dungeon
 
-## objective
+## Objective
 The aim of project `change` is to provide several game domains/environments which are centered around human-ai team collaboration.
 Each of these environments enforce dependency on the companion agent. In other words, the human needs the help of the AI agent
 companion to solve the problem. Furthermore, each problem solving collaborative game environment has:
