@@ -32,12 +32,24 @@ Current there are 4 collaborative domains centered around Human-AI team collabor
 
 ![change_world](/images/change_world.png)
 
-## Technology
+## Required Software
 * Unity 2020.2.1f1 or newer
 * Unity ml-agents 0.27.0 or newer
+* Python 3.8.8 or newer
+
+### Getting Started with the environment
+Setting up **Python**, **Tensorflow**, **Unity** and **Unity ML-agents** does not diviate from general installation requirements. 
+_We recommend to run environment on Windows machine to avoid issues with OMP._
+
+Our agent for the "**Anticipate an Intent** and **Act**" environment can be found inside -> **IntentPredictingAgent.cs** file. This is a file to head to in order to alter agent action space, observation and reward.
 
 ## Results
-We were able to successfuly train an agent that based on his observations predicted Intent displayed by a human avatar.
+We were able to successfuly train an agent that based on his observations predicted Intent displayed by a human avatar. 
+System was trained on a **Human-Proxy** which displayed random intents for bot to step on a certain target platform.
+**Actions space was limited to:**
+* Move Right
+* Move Left
+* Stand Still
 
 Agent results during the training process ->
 ![Training Process](/images/learning-process.png)
