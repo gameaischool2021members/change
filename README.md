@@ -7,6 +7,13 @@ Welcome to team *change*:
 - G: game
 - E: environment
 
+Team CHANGE Members: 
+- LJ Arendse (@LJArendse)
+- Christian Cecconi (@ChristianCecconi)
+- Anna Dollbo (@dollbo)
+- Vladyslav Ieliashevskyi (@vieliashevskyi)
+- Björn P Mattsson (@Plankton555)
+
 ![change_world](change_world.png)
 
 ## objective
